@@ -1,0 +1,68 @@
+From 99c2a7b2c2765b9af361c7965217cf3c93c2490e Mon Sep 17 00:00:00 2001
+From: Osamu Nakamura <osamu.nakamura.xt@renesas.com>
+Date: Wed, 17 Apr 2019 14:24:04 +0900
+Subject: [PATCH] OHCI support
+
+---
+ arch/arm/boot/dts/r7s9210.dtsi | 26 ++++++++++++++++++++++++--
+ 1 file changed, 24 insertions(+), 2 deletions(-)
+
+diff --git a/arch/arm/boot/dts/r7s9210.dtsi b/arch/arm/boot/dts/r7s9210.dtsi
+index b148d37..c395fcc 100755
+--- a/arch/arm/boot/dts/r7s9210.dtsi
++++ b/arch/arm/boot/dts/r7s9210.dtsi
+@@ -403,13 +403,24 @@
+ 	};
+ 
+ 	/* USB2.0 Host/Function - Channel 0 */
++	ohci0: usbhcd@e8218000 {
++		compatible = "generic-ohci";
++		reg = <0xe8218000 0x100>;
++		interrupts = <GIC_SPI 31 IRQ_TYPE_LEVEL_HIGH>;
++		clocks = <&cpg CPG_MOD 61>;
++		phys = <&usb2_phy0>;
++		phy-names = "usb";
++		power-domains = <&cpg>;
++		status = "disabled";
++	};
++
+ 	ehci0: usbhcd@e8218100 {
+ 		compatible = "generic-ehci";
+ 		reg = <0xe8218100 0x100>;
+ 		interrupts = <GIC_SPI 31 IRQ_TYPE_LEVEL_HIGH>;
+ 		clocks = <&cpg CPG_MOD 61>;
+ 		phys = <&usb2_phy0>;
+-		phy-names = "usb0";
++		phy-names = "usb";
+ 		power-domains = <&cpg>;
+ 		status = "disabled";
+ 	};
+@@ -438,13 +449,24 @@
+ 	};
+ 
+ 	/* USB2.0 Host/Function - Channel 1 */
++	ohci1: usbhcd@e821a000 {
++		compatible = "generic-ohci";
++		reg = <0xe821a000 0x100>;
++		interrupts = <GIC_SPI 36 IRQ_TYPE_LEVEL_HIGH>;
++		clocks = <&cpg CPG_MOD 60>;
++		phys = <&usb2_phy1>;
++		phy-names = "usb";
++		power-domains = <&cpg>;
++		status = "disabled";
++	};
++
+ 	ehci1: usbhcd@e821a100 {
+ 		compatible = "generic-ehci";
+ 		reg = <0xe821a100 0x100>;
+ 		interrupts = <GIC_SPI 36 IRQ_TYPE_LEVEL_HIGH>;
+ 		clocks = <&cpg CPG_MOD 60>;
+ 		phys = <&usb2_phy1>;
+-		phy-names = "usb1";
++		phy-names = "usb";
+ 		power-domains = <&cpg>;
+ 		status = "disabled";
+ 	};
+-- 
+2.7.4
+
