@@ -1,0 +1,54 @@
+Initial Operation Check of RZ/A2M Linux USB Function
+
+1. How to carry out initial oepration check
+  1.1 Following environment is used as the Host PC:
+   - Ubuntu where composite MSC plus CDC-ECM are available
+
+  1.2 Carry out the following procedure for a long time (more than 3-hours) repeatedly
+　- CDC-ECM: Issue (flood)ping from Host PC to RZ/A2M EVB.
+　- MSC: Consider the file that is stored in SD inserted to RZ/A2M EVB as storage (disk) and access to the file using dd command.
+
+2. How to set up the environment
+=== In case of using Multifunction(CDC Ethernet + CDC Serial + Storage configuration) ===
+　2-1. Build and incorporate necessary modules in accordance with the guidance below:
+　　- Copy rza2mevb_xip_multi_defconfig as .config
+　　　$ cp /path/to/rza2mevb_xip_ecm+msc_defconfig output/linux-4.19/.config
+
+　　- Build kernel
+　　　$ ./build.sh kernel olddefconfig
+　　　$ ./build.sh kernel xipImage
+
+　　- Install the modules to be built to rootfs
+　　　$ export INSTALL_MOD_PATH=`pwd`/output/buildroot-2018.02/output/target
+　　　$ rm -rf ${INSTALL_MOD_PATH}/lib/modules
+　　　$ ./build.sh kernel modules
+　　　$ ./bulid.sh kernel modules_install
+
+　　　If the installation is successfully terminamted, the modules should be installed in /lib/modules.
+
+　　- Re-build rootfs
+　　　$ rm -r output/buildroot-2018.02/output/images/rootfs.*
+　　　$ ./build.sh buildroot
+
+　　- Program kernel and roofs to QSPI Flash
+　　　$ ./build.sh jlink
+
+　2-2. Incert the SD card to RZ/A2M EVB, power on RZ/A2M EVB and launch XIP Linux
+
+　2-3. Invoke $ modprobe g_multi file=/dev/mmcblk0p1
+　　　 # The following log should be displayed.
+　　　 [   46.343092] using random self ethernet address
+　　　 [   46.348000] using random host ethernet address
+　　　 [   46.484583] Mass Storage Function, version: 2009/09/11
+　　　 [   46.490211] LUN: removable file: (no medium)
+　　　 [   46.496575] LUN: file: /dev/mmcblk0p1
+　　　 [   46.500668] Number of LUNs=1
+　　　 [   46.508524] usb0: HOST MAC 2e:85:11:58:01:e4
+　　　 [   46.514551] usb0: MAC 96:c4:71:0e:e2:ec
+　　　 [   46.535511] g_multi gadget: Multifunction Composite Gadget
+　　　 [   46.542018] g_multi gadget: userspace failed to provide iSerialNumber
+　　　 [   46.548558] g_multi gadget: g_multi ready
+
+　2-4. Invoke $ ifconfig usb0 192.168.10.2 up
+
+　2-5. When inserting USB cable to HOST PC, /dev/mmcblk0p1 is shown as VOLUME(xx:)

@@ -1,0 +1,78 @@
+--------------------------------------------------------------------------------
+RZ/A2M Linux USB Function Driver - How to setup test environment
+--------------------------------------------------------------------------------
+
+1. Pre-requisite
+ 1.1 Hardware
+  - microSD card (8GB)
+    This is for the media of MSC function.
+
+  - USB Bus Analizer
+    This might be used for checking the bahavior of USBF driver.
+
+ 1.2 Software
+  - iperf 3.1.3
+    Please download the source code from the link below:
+    https://downloads.es.net/pub/iperf/
+
+  - USB20CV
+    Please download the installer from the link below:
+    https://www.usb.org/usb2tools
+
+  - Shell Script for Verification
+    REL shares the scripts listed below:
+        test-1-2-1.sh
+        test-1-2-2.sh
+        test-1-3-1-r.sh
+        test-1-3-1-w.sh
+        test-1-3-2-r.sh
+        test-1-3-2-w.sh
+        test-2-2-1.sh
+        test-2-2-2.sh
+        test-2-3-1-r.sh
+        test-2-3-1-w.sh
+        test-2-3-2-r.sh
+        test-2-3-2-w.sh
+
+    For details on the above scripts, please refer to the sheet "Shell Script" 
+    in Verification Report.
+
+  - Data file
+    MscTestData.bin
+    MscTestData256MB.bin
+
+    Size of above data is 4G byte and 256M byte respectively.
+    Its contents are as follows:
+      - Binary data where from 0x00 to 0xff is repeatedly placed per 256 byte
+      - The fist 4 byte is overwritten by sequential serial number per 512 byte
+        (This means the serial number should become the same as "SCSI Logical Block Address".)
+
+ 1.3 Procedure to set up the verification environment
+  (For RZ/A2M Linux Environment)
+    - iperf 3.1.3
+      #1 Extract the source code to RZ/A2M Linux BSP.
+      #2 Build the source code using the command below:
+         $ ./configure --host=arm-linux CC=arm-linux-gnueabihf-gcc CXX=arm-linux-gnueabihf-g++ CFLAGS=-static CXXFLAGS=-static
+         $ make
+      #3 Integrate the resultant executable to rootfs.
+
+  (For Linux Host PC)
+    - iperf 3.1.3
+      #1 Extract the source code to an arbitrary place on Linux Host PC.
+      #2 Build the source code using the command below:
+        $ ./configure
+        $ make
+
+    - Test script
+      #1 Place the following scripts to an arbitrary place on Linux Host PC:
+        test-1-2-1.sh
+        test-1-2-2.sh
+        test-1-3-1-r.sh
+        test-1-3-1-w.sh
+        test-1-3-2-r.sh
+        test-1-3-2-w.sh
+
+    - Data file
+      #1 Place the following files to the directory where the above mentioned test scripts are placed.
+        MscTestData.bin
+        MscTestData256.bin
