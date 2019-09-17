@@ -1,0 +1,227 @@
+[There is no transmit]
+: 15696K used, 48716K free, 36K shrd, 8348K buff, 2780K cached
+CPU:   0% usr   0% sys   0% nic  99% idle   0% io   0% irq   0% sirq
+Load average: 0.01 0.18 0.13 1/47 578
+  PID  PPID USER     STAT   VSZ %VSZ %CPU COMMAND
+  578   545 root     R     2660   4%   0% top
+    7     2 root     SW       0   0%   0% [ksoftirqd/0]
+  545     1 root     S     2660   4%   0% -sh
+    1     0 root     S     2532   4%   0% init
+  528     1 root     S     2532   4%   0% /sbin/klogd -n
+  524     1 root     S     2532   4%   0% /sbin/syslogd -n
+  569   545 root     T     2532   4%   0% top
+  573   545 root     S     2308   4%   0% iperf3 -s
+  214     2 root     SW       0   0%   0% [irq/62-e821b400]
+   65     2 root     IW       0   0%   0% [kworker/0:1-eve]
+  498     2 root     SW       0   0%   0% [heartbeat]
+  557     2 root     SW       0   0%   0% [file-storage]
+  516     2 root     IW<      0   0%   0% [kworker/0:1H-kb]
+  215     2 root     SW       0   0%   0% [irq/63-e821b400]
+  102     2 root     IW       0   0%   0% [kworker/u2:3-ev]
+  482     2 root     IW       0   0%   0% [kworker/0:2-eve]
+    8     2 root     SW       0   0%   0% [kdevtmpfs]
+    2     0 root     SW       0   0%   0% [kthreadd]
+   66     2 root     IW       0   0%   0% [kworker/u2:2-ev]
+    6     2 root     IW<      0   0%   0% [mm_percpu_wq]
+$ 
+
+[In case of -b 2M -l 469]
+Mem: 15728K used, 48684K free, 40K shrd, 8348K buff, 2784K cached
+CPU:   0% usr   9% sys   0% nic  89% idle   0% io   0% irq   0% sirq
+Load average: 0.00 0.11 0.11 1/47 580
+  PID  PPID USER     STAT   VSZ %VSZ %CPU COMMAND
+  573   545 root     S     2312   4%   5% iperf3 -s
+  580   545 root     R     2660   4%   0% top
+    7     2 root     SW       0   0%   0% [ksoftirqd/0]
+  545     1 root     S     2660   4%   0% -sh
+    1     0 root     S     2532   4%   0% init
+  528     1 root     S     2532   4%   0% /sbin/klogd -n
+  524     1 root     S     2532   4%   0% /sbin/syslogd -n
+  569   545 root     T     2532   4%   0% top
+  214     2 root     SW       0   0%   0% [irq/62-e821b400]
+   65     2 root     IW       0   0%   0% [kworker/0:1-eve]
+  498     2 root     SW       0   0%   0% [heartbeat]
+  557     2 root     SW       0   0%   0% [file-storage]
+  516     2 root     IW<      0   0%   0% [kworker/0:1H-kb]
+  215     2 root     SW       0   0%   0% [irq/63-e821b400]
+  102     2 root     IW       0   0%   0% [kworker/u2:3-ev]
+  482     2 root     IW       0   0%   0% [kworker/0:2-eve]
+    8     2 root     SW       0   0%   0% [kdevtmpfs]
+    2     0 root     SW       0   0%   0% [kthreadd]
+   66     2 root     IW       0   0%   0% [kworker/u2:2-ev]
+-----------------------------------------------------------
+Server listening on 5201
+-----------------------------------------------------------
+
+$- - - - - - - - - - - - - - - - - - - - - - - - -
+[ ID] Interval           Transfer     Bandwidth       Jitter    Lost/Total Datagrams
+[  4]   0.00-10.00  sec  2.36 MBytes  1.98 Mbits/sec  0.036 ms  0/5278 (0%) 
+
+[In case of -b 0 -l 469]
+[  5]   1.00-2.00   sec   384 KBytes  3.14 Mbits/sec  1.574 ms  13054/13892 (94%Mem: 18100K used, 46312K free, 40K shrd, 8348K buff, 2784K cached
+CPU:   2% usr  12% sys   0% nic   0% idle   0% io   0% irq  85% sirq
+Load average: 0.14 0.10 0.10 2/47 582
+  PID  PPID USER     STAT   VSZ %VSZ %CPU COMMAND
+  573   545 root     R     2312   4%  85% iperf3 -s
+    7     2 root     RW       0   0%   8% [ksoftirqd/0]
+  582   545 root     R     2660   4%   7% top
+   65     2 root     IW       0   0%   0% [kworker/0:1-eve]
+  498     2 root     SW       0   0%   0% [heartbeat]
+  545     1 root     S     2660   4%   0% -sh
+    1     0 root     S     2532   4%   0% init
+  528     1 root     S     2532   4%   0% /sbin/klogd -n
+  524     1 root     S     2532   4%   0% /sbin/syslogd -n
+  569   545 root     T     2532   4%   0% top
+  214     2 root     SW       0   0%   0% [irq/62-e821b400]
+  557     2 root     SW       0   0%   0% [file-storage]
+  516     2 root     IW<      0   0%   0% [kworker/0:1H-kb]
+  215     2 root     SW       0   0%   0% [irq/63-e821b400]
+  102     2 root     IW       0   0%   0% [kworker/u2:3-ev]
+  482     2 root     IW       0   0%   0% [kworker/0:2-eve]
+    8     2 root     SW       0   0%   0% [kdevtmpfs]
+    2     0 root     SW       0   0%   0% [kthreadd]
+   66     2 root     IW       0   0%   0% [kworker/u2:2-ev]
+$ [  5]   5.02-6.01   sec   749 KBytes  6.23 Mbits/sec  1.308 ms  12183/13819 (88%)  
+[  5]   6.01-7.01   sec   924 KBytes  7.51 Mbits/sec  0.949 ms  12577/14594 (86%)  
+[  5]   7.01-8.00   sec   873 KBytes  7.23 Mbits/sec  1.071 ms  11456/13362 (86%)  
+[  5]   8.00-9.00   sec   322 KBytes  2.64 Mbits/sec  2.764 ms  13015/13718 (95%)  
+[  5]   9.00-10.00  sec   311 KBytes  2.54 Mbits/sec  2.283 ms  13420/14098 (95%)  
+[  5]  10.00-10.04  sec  5.50 KBytes  1.25 Mbits/sec  3.560 ms  339/351 (97%)  
+- - - - - - - - - - - - - - - - - - - - - - - - -
+
+
+[In case of -b 0 -l 65505 ]
+Mem: 15900K used, 48512K free, 100K shrd, 8348K buff, 2844K cached
+CPU:   0% usr  16% sys   0% nic  60% idle   0% io   0% irq  22% sirq
+Load average: 0.17 0.13 0.10 1/47 583
+  PID  PPID USER     STAT   VSZ %VSZ %CPU COMMAND
+  214     2 root     SW       0   0%  27% [irq/62-e821b400]
+  573   545 root     S     2372   4%   6% iperf3 -s
+   65     2 root     RW       0   0%   6% [kworker/0:1-eve]
+  583   545 root     R     2660   4%   1% top
+    7     2 root     SW       0   0%   0% [ksoftirqd/0]
+  498     2 root     SW       0   0%   0% [heartbeat]
+  545     1 root     S     2660   4%   0% -sh
+    1     0 root     S     2532   4%   0% init
+  528     1 root     S     2532   4%   0% /sbin/klogd -n
+  524     1 root     S     2532   4%   0% /sbin/syslogd -n
+  569   545 root     T     2532   4%   0% top
+  557     2 root     SW       0   0%   0% [file-storage]
+  516     2 root     IW<      0   0%   0% [kworker/0:1H-kb]
+  215     2 root     SW       0   0%   0% [irq/63-e821b400]
+  102     2 root     IW       0   0%   0% [kworker/u2:3-ev]
+  482     2 root     IW       0   0%   0% [kworker/0:2-eve]
+    8     2 root     SW       0   0%   0% [kdevtmpfs]
+    2     0 root     SW       0   0%   0% [kthreadd]
+   66     2 root     IW       0   0%   0% [kworker/u2:2-ev]
+    6     2 root     IW<      0   0%   0% [mm_percpu_wq]
+$ [  5]   8.00-9.00   sec  2.00 MBytes  16.8 Mbits/sec  45.221 ms  0/32 (0%)  
+[  5]   9.00-10.00  sec  2.00 MBytes  16.8 Mbits/sec  32.284 ms  0/32 (0%)  
+[  5]  10.00-10.22  sec   448 KBytes  16.6 Mbits/sec  31.895 ms  0/7 (0%)  
+- - - - - - - - - - - - - - - - - - - - - - - - -
+[ ID] Interval           Transfer     Bandwidth       Jitter    Lost/Total Datagrams
+[  5]   0.00-10.22  sec  0.00 Bytes  0.00 bits/sec  31.895 ms  0/329 (0%)  
+[ ID] Interval           Transfer     Bandwidth       Jitter    Lost/Total Datagrams
+[  5]   0.00-10.04  sec  0.00 Bytes  0.00 bits/sec  3.560 ms  125680/137462 (91%)  
+
+[In case of -b 0 -l 470]
+Mem: 15972K used, 48440K free, 40K shrd, 8348K buff, 2784K cached
+CPU:   7% usr  45% sys   0% nic   2% idle   0% io   0% irq  44% sirq
+Load average: 0.36 0.18 0.12 2/47 584
+  PID  PPID USER     STAT   VSZ %VSZ %CPU COMMAND
+  214     2 root     SW       0   0%  51% [irq/62-e821b400]
+  573   545 root     R     2312   4%  32% iperf3 -s
+   65     2 root     IW       0   0%   9% [kworker/0:1-eve]
+  584   545 root     R     2660   4%   2% top
+    7     2 root     SW       0   0%   0% [ksoftirqd/0]
+  545     1 root     S     2660   4%   0% -sh
+    1     0 root     S     2532   4%   0% init
+  528     1 root     S     2532   4%   0% /sbin/klogd -n
+  524     1 root     S     2532   4%   0% /sbin/syslogd -n
+  569   545 root     T     2532   4%   0% top
+  498     2 root     SW       0   0%   0% [heartbeat]
+  557     2 root     SW       0   0%   0% [file-storage]
+  516     2 root     IW<      0   0%   0% [kworker/0:1H-kb]
+  215     2 root     SW       0   0%   0% [irq/63-e821b400]
+  102     2 root     IW       0   0%   0% [kworker/u2:3-ev]
+  482     2 root     IW       0   0%   0% [kworker/0:2-eve]
+    8     2 root     SW       0   0%   0% [kdevtmpfs]
+    2     0 root     SW       0   0%   0% [kthreadd]
+   66     2 root     IW       0   0%   0% [kworker/u2:2-ev]
+[  5]   5.00-6.00   sec   779 KBytes  6.38 Mbits/sec  0.716 ms  619/2316 (27%)  
+[  5]   6.00-7.00   sec  1.35 MBytes  11.3 Mbits/sec  0.622 ms  0/3005 (0%)  
+[  5]   7.00-8.00   sec  1.35 MBytes  11.3 Mbits/sec  0.665 ms  0/3007 (0%)  
+[  5]   8.00-9.00   sec  1.35 MBytes  11.3 Mbits/sec  0.574 ms  0/3005 (0%)  
+[  5]   9.00-10.00  sec  1.34 MBytes  11.3 Mbits/sec  0.591 ms  0/3000 (0%)  
+[  5]  10.00-10.05  sec  64.7 KBytes  10.5 Mbits/sec  0.572 ms  0/141 (0%)  
+- - - - - - - - - - - - - - - - - - - - - - - - -
+[ ID] Interval           Transfer     Bandwidth       Jitter    Lost/Total Datagrams
+[  5]   0.00-10.05  sec  0.00 Bytes  0.00 bits/sec  0.572 ms  620/29369 (2.1%)  
+[SUM]  0.0-10.1 sec  1 datagrams received out-of-order
+
+============
+$ cat /proc/interrupts 
+           CPU0       
+ 17:     743039     GIC-0  89 Edge      ostm
+ 20:          0     GIC-0 309 Level     e8008000.serial:rx err
+ 21:          0     GIC-0 310 Level     e8008000.serial:rx full
+ 22:      20587     GIC-0 311 Level     e8008000.serial:tx empty
+ 23:        350     GIC-0 312 Level     e8008000.serial:rx ready
+ 24:          0     GIC-0 280 Level     riic-tend
+ 25:          0     GIC-0 281 Edge      riic-rdrf
+ 26:          0     GIC-0 282 Edge      riic-tdre
+ 27:          0     GIC-0 283 Level     riic-stop
+ 29:          0     GIC-0 285 Level     riic-nack
+ 32:          1     GIC-0 288 Level     riic-tend
+ 33:          3     GIC-0 289 Edge      riic-rdrf
+ 34:          5     GIC-0 290 Edge      riic-tdre
+ 35:          2     GIC-0 291 Level     riic-stop
+ 37:          2     GIC-0 293 Level     riic-nack
+ 41:        332     GIC-0 354 Level     e8228000.sd
+ 42:          0     GIC-0  63 Level     e8218200.usb-phy, ehci_hcd:usb1
+ 43:          0     GIC-0  68 Level     e821a200.usb-phy
+ 44:    1808444     GIC-0  69 Level     e821b000.usbhs
+ 45:          0     GIC-0  45 Edge      e8220000.dma-controller
+ 46:          0     GIC-0  46 Edge      e8220000.dma-controller
+ 47:          0     GIC-0  47 Edge      e8220000.dma-controller
+ 48:          0     GIC-0  48 Edge      e8220000.dma-controller
+ 49:          0     GIC-0  49 Edge      e8220000.dma-controller
+ 50:          0     GIC-0  50 Edge      e8220000.dma-controller
+ 51:          0     GIC-0  51 Edge      e8220000.dma-controller
+ 52:          0     GIC-0  52 Edge      e8220000.dma-controller
+ 53:          0     GIC-0  53 Edge      e8220000.dma-controller
+ 54:          0     GIC-0  54 Edge      e8220000.dma-controller
+ 55:          0     GIC-0  55 Edge      e8220000.dma-controller
+ 56:          0     GIC-0  56 Edge      e8220000.dma-controller
+ 57:          0     GIC-0  57 Edge      e8220000.dma-controller
+ 58:          0     GIC-0  58 Edge      e8220000.dma-controller
+ 59:          0     GIC-0  59 Edge      e8220000.dma-controller
+ 60:          0     GIC-0  60 Edge      e8220000.dma-controller
+ 61:          0     GIC-0  61 Edge      e8220000.dma-controller
+ 62:     261950     GIC-0  70 Level     e821b400.dma-controller
+ 63:        870     GIC-0  71 Level     e821b400.dma-controller
+ 64:          0     GIC-0  72 Level     e821b400.dma-controller
+Err:          0
+$ 
+
+===========after start up board
+ 52:          0     GIC-0  52 Edge      e8220000.dma-controller
+ 53:          0     GIC-0  53 Edge      e8220000.dma-controller
+ 54:          0     GIC-0  54 Edge      e8220000.dma-controller
+ 55:          0     GIC-0  55 Edge      e8220000.dma-controller
+ 56:          0     GIC-0  56 Edge      e8220000.dma-controller
+ 57:          0     GIC-0  57 Edge      e8220000.dma-controller
+ 58:          0     GIC-0  58 Edge      e8220000.dma-controller
+ 59:          0     GIC-0  59 Edge      e8220000.dma-controller
+ 60:          0     GIC-0  60 Edge      e8220000.dma-controller
+ 61:          0     GIC-0  61 Edge      e8220000.dma-controller
+ 62:          0     GIC-0  70 Level     e821b400.dma-controller
+ 63:         27     GIC-0  71 Level     e821b400.dma-controller
+ 64:          0     GIC-0  72 Level     e821b400.dma-controller
+Err:          0
+$ 
+
+---
+after run -l 469
+
+---
